@@ -1,9 +1,8 @@
 <script>
-import axios from 'axios';
 export default {
   name: 'JumbotronPage',
   props:{
-    data: Object
+    games: Object
     }
 }
 
@@ -51,7 +50,7 @@ export default {
         <div class="container d-flex py-3 jumbo justify-content-center">
             <section class="col-4">
                 <div>
-                    <img src="#" alt="game.title" class="placeholder image">
+                    <img  class="placeholder image">
                     <div class="price">
                         <span class="placeholder p-2">"Sconto"</span>
                         <span class="placeholder p-2">"Prezzo"</span>
@@ -59,7 +58,7 @@ export default {
                 </div> 
             </section>
             <section class="col-6">
-                <h2>game.title</h2>
+                <h2>{{game.title}}</h2>
                 <div class="text">Data di rilascio: "DATE"</div>
                 <div class="cont-genere">
                     <!-- aggiungere foreach here -->

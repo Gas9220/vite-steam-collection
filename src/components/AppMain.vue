@@ -1,22 +1,18 @@
 <script>
 import JumbotronPage from '../pages/JumbotronPage.vue';
-import OffersPage from '../pages/OffersPage.vue';
+import axios from 'axios';
 export default {
-  name: 'AppMain',
-  components: {
-    JumbotronPage,
-    OffersPage
-  }
+    name: 'AppMain',
+    components: {
+        JumbotronPage
+    }
 }
 </script>
 
 <template>
-    <div>
-        <JumbotronPage></JumbotronPage>
-        <OffersPage />
-    </div>
+  <JumbotronPage :games="games"></JumbotronPage>
 </template>
 
-<style scoped>
 
-</style>
+
+<style lang="scss" scoped></style>
