@@ -20,16 +20,14 @@ export default {
 <template>
     <div class="games-container">
         <h2 class="title">I GIOCHI</h2>
-        <div v-for="game in  games" class="games shadow-lg mb-2">
+        <div v-for="game in games" class="games shadow-lg mb-2">
             <div class="col-12 d-flex">
-                <div class="img"><img
-                        :src="game.thumbnail"
-                        :alt="game.title"></div>
+                <div class="img"><img :src="game.thumbnail" :alt="game.title"></div>
                 <div class="games-info d-flex justify-content-between w-100">
                     <div>
                         <h2 class="games-title text-uppercase">{{ game.title }}</h2>
-                        <div v-for="genre in genres" :key="genre.id" class="d-flex">
-                            <div class="tag">{{ genre }}</div>
+                        <div v-for="genre in game.genres" :key="genre.id" class="d-flex">
+                            <div class="tag">{{ genre.name }}</div>
                         </div>
                         <div class="d-flex">
                             <div class="date">{{ formatDate(game.publication_year) }}</div>
@@ -44,8 +42,7 @@ export default {
                                     game.price }}€</h5>
                             <h5 class="old-price" v-else style="color: #b1b9c4">Free-to-Play</h5>
                             <h4 class="new-price" v-if="game.discount !== 0 && game.price !== 0">{{ game.price - (game.price
-
-                                (game.discount / 100)) }}€</h4>
+                                * (game.discount / 100)) }}€</h4>
                         </div>
                     </div>
                 </div>
@@ -94,7 +91,7 @@ h3 {
 
 img {
     height: 200px;
-    object-fit:contain;
+    object-fit: contain;
     margin-right: 15px;
     padding: 5px;
 }

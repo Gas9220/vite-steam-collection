@@ -7,8 +7,8 @@ export default {
     name: 'AppMain',
     components: {
         JumbotronPage,
+        MainGames,
         OffersPage,
-        MainGames
     },
     data() {
         return {
@@ -32,9 +32,9 @@ export default {
 
 <template>
     <JumbotronPage :games="games"></JumbotronPage>
-    <MainGames :games="games"></MainGames>
     <OffersPage :games="games"></OffersPage>
-    
+    <MainGames :games="games"></MainGames>
+
 </template>
 
 

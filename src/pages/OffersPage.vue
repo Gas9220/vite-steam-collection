@@ -6,7 +6,9 @@ export default {
     },
     computed: {
         gamesFeature() {
-            return this.games.splice(0, 3);
+            const featuredGames = [...this.games];
+            featuredGames.splice(0,2);
+            return featuredGames;
         }
     },
     created() {
