@@ -49,17 +49,17 @@ export default {
         <h1 class="pt-3">GIOCHI</h1>
         <div class="container d-flex py-3 jumbo justify-content-center">
             <section class="col-4">
-                <div>
-                    <img  class="placeholder image">
+                <div v-if="games[0]">
+                    <img :src="game.thumbnail" :alt="game.title" class="placeholder image">
                     <div class="price">
                         <span class="placeholder p-2">"Sconto"</span>
                         <span class="placeholder p-2">"Prezzo"</span>
                     </div>
                 </div> 
             </section>
-            <section class="col-6">
+            <section class="col-6" v-if="games[0]">
                 <h2>{{game.title}}</h2>
-                <div class="text">Data di rilascio: "DATE"</div>
+                <div class="text">Data di rilascio:{{ game.publication_year }}</div>
                 <div class="cont-genere">
                     <!-- aggiungere foreach here -->
                     <div class="p-1 me-1 placeholder">

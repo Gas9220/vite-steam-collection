@@ -1,38 +1,33 @@
 <script>
 export default {
   name: 'OffersPage',
+  props:{
+    games: Object
+    },
+    computed:{
+        gamesFeature(){
+            return this.games;
+        }
+    },
+    created(){
+        console.log(this.games)
+    }
 
 }
 </script>
 <template>
-    <!-- <div class="px-5" id="offers">
+    <div class="px-5" id="offers">
         <h3>OFFERTE SPECIALI</h3>
         <div class="d-flex justify-content-center mt-4">
-            <div class="col-3">
-                <img :src="{{game.slug}}" :alt="{{game.title}}" class="placeholder image">
-                    <div>
-                        <span class="placeholder p-2">"Sconto"</span>
-                        <span class="placeholder p-2">"Prezzo"</span>
-                    </div>
-            </div>
-            <div class="col-3">
-                <img :src="{{game.slug}}" :alt="{{game.title}}" class="placeholder image">
-                    <div>
-                        <span class="placeholder p-2">"Sconto"</span>
-                        <span class="placeholder p-2">"Prezzo"</span>
-                    </div>
-            </div>
-            <div class="col-3 pb-4">
-                <img :src="{{game.slug}}" :alt="{{game.title}}" class="placeholder image">
+            <div class="col-3" v-for="game in gamesFeature">
+                <img :src="game.thumbnail" :alt="game.title" class="placeholder image">
                     <div>
                         <span class="placeholder p-2">"Sconto"</span>
                         <span class="placeholder p-2">"Prezzo"</span>
                     </div>
             </div>
         </div> 
-
-
-    </div>-->
+    </div>
 </template>
 
 <style scoped>
