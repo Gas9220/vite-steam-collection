@@ -19,6 +19,7 @@ export default {
 </script>
 <template>
     <div id="offers">
+        <h3 class="container">OFFERTE SPECIALI</h3>
         <div class="container pb-5 justify-content-center d-flex">
             <div class="row">
                 <div class="col-4" v-for="game in gamesFeature">
