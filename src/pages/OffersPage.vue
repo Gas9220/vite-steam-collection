@@ -22,10 +22,10 @@ export default {
         <div class="container pb-5 justify-content-center d-flex">
             <div class="row">
                 <div class="col-4" v-for="game in gamesFeature">
-                    <img :src="game.thumbnail" :alt="game.title" class="placeholder image">
+                    <img :src="game.thumbnail" :alt="game.title" class="image">
                     <div>
-                        <span class="placeholder p-2">{{ game.price }}€</span>
-                        <span class="placeholder p-2">{{ game.discount }}%</span>
+                        <span class="price p-2">{{ game.price === 0 ? 'Free to play' : game.price + '€'}}</span>
+                        <span class="discount p-2">-{{ game.discount }}%</span>
                     </div>
                 </div>
             </div>
@@ -34,6 +34,16 @@ export default {
 </template>
 
 <style scoped>
+.price {
+    background-color: #383f49;
+    padding: 10px;
+    color: #c2fb00;
+    
+}
+.discount {
+    background-color: #4b6c21;
+    color: #bff517;
+}
 #offers {
     background-color: #0f1014;
 }

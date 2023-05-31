@@ -3,13 +3,24 @@ export default {
     name: 'JumbotronPage',
     props: {
         games: Object
+    },
+    methods: { //Take time and return a different format with 3 letters month and D-M-Y format
+        formatDate(dateString) {
+            const date = new Date(dateString);
+            const day = date.getDate();
+            const year = date.getFullYear();
+            const month = date.toLocaleString('it-IT', { month: 'short' });
+
+            return `${day} ${month} ${year}`;
+        }
     }
 }
 
 </script>
 <template>
     <div id="jumbotron">
-        <div class="p-5">
+        <div class="p-5 position-relative">
+            <img class="bg-img" :src="games[0].thumbnail" alt="">
             <!-- Nav Bar -->
             <nav id="nav" class="navbar navbar-expand-lg" data-bs-theme="dark">
                 <div class="container-fluid">
@@ -50,24 +61,24 @@ export default {
             <!-- / Nav Bar -->
             <!-- JUMBOTRON -->
             <h1 class="pt-3">GIOCHI</h1>
-            <div class="container d-flex py-3 jumbo justify-content-center">
+            <div class="container d-flex py-3 jumbo justify-content-center z-2">
                 <div class="row gap-5">
                     <div class="col-4">
                         <div v-if="games[0]">
-                            <img :src="games[0].thumbnail" :alt="games[0].title" class="placeholder image">
+                            <img :src="games[0].thumbnail" :alt="games[0].title" class="image">
                             <div class="price">
-                                <span class="placeholder p-2">{{ games[0].price }}€</span>
-                        <span class="placeholder p-2">{{ games[0].discount }}%</span>
+                                <span class="p-2 discount">-{{ games[0].discount }}%</span>
+                                <span class="p-2 price-style">{{ games[0].price }}€</span>
                             </div>
                         </div>
                     </div>
                     <div class="col-6" v-if="games[0]">
                         <h2>{{ games[0].title }}</h2>
-                        <div class="text">Data di rilascio:{{ games[0].publication_year }}</div>
+                        <div class="text">Data di rilascio:  {{ formatDate(games[0].publication_year) }}</div>
                         <div class="cont-genere d-flex">
                             <!-- aggiungere foreach here -->
 
-                            <div class="genre-tag p-1 rounded" v-for="genre in games[0].genres">
+                            <div class="genre-tag p-1 rounded mt-2" v-for="genre in games[0].genres">
                                 <span class="text-white">{{ genre.name }}</span>
                             </div>
                         </div>
@@ -84,6 +95,25 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.price-style {
+    background-color: #383f49;
+    color: #c2fb00;
+}
+
+.bg-img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    object-fit: fill;
+    transform: translate(-50%, -50%);
+    opacity: 0.2;
+}
+
+.discount {
+    background-color: #4b6c21;
+    color: #bff517;
+}
+
 .text {
     color: #d6cdce;
 }
