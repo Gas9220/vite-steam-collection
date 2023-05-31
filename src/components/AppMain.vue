@@ -1,14 +1,14 @@
 <script>
 import JumbotronPage from '../pages/JumbotronPage.vue';
 import OffersPage from '../pages/OffersPage.vue';
-//import MainGames from './MainGames.vue';
+import MainGames from './MainGames.vue';
 import axios from 'axios';
 export default {
     name: 'AppMain',
     components: {
         JumbotronPage,
-        OffersPage
-        //MainGames
+        OffersPage,
+        MainGames
     },
     data() {
         return {
@@ -32,6 +32,7 @@ export default {
 
 <template>
     <JumbotronPage :games="games"></JumbotronPage>
+    <MainGames :games="games"></MainGames>
     <OffersPage :games="games"></OffersPage>
     
 </template>
