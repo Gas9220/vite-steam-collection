@@ -33,6 +33,7 @@ export default {
                             <div class="date">{{ formatDate(game.publication_year) }}</div>
                             <i class="fa-solid fa-laptop"></i>
                         </div>
+                    <span v-for="platform in game.platforms" class="text-white">{{ platform.name }}</span>
                     </div>
                     <div class="d-flex price-tags align-self-end shadow">
                         <h2 class="discount" v-if="game.discount !== 0">{{ game.discount }}%</h2>
