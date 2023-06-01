@@ -9,7 +9,6 @@ export default {
     AppHeader,
     AppFooter,
     AppMain
-
   }
 }
 </script>

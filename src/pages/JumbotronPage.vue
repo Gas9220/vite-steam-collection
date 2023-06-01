@@ -20,7 +20,7 @@ export default {
 <template>
     <div id="jumbotron">
         <div class="p-5 position-relative">
-            <img class="bg-img" :src="games[0].thumbnail" alt="">
+            <img v-if="games[0]" class="bg-img" :src="games[0].thumbnail" alt="">
             <!-- Nav Bar -->
             <nav id="nav" class="navbar navbar-expand-lg" data-bs-theme="dark">
                 <div class="container-fluid">
