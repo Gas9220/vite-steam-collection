@@ -112,7 +112,7 @@ img {
 
 .price {
     background-color: #383f49;
-    padding: 10px;
+    padding: 5px;
 }
 
 .tag {
@@ -120,7 +120,7 @@ img {
 }
 
 .discount {
-    padding: 10px;
+    padding: 13px;
     align-items: center;
 }
 
@@ -145,6 +145,8 @@ img {
 
 .price-tags {
     margin: 0px 5px;
+    align-items: center;
+    justify-content: center;
 }
 
 .new-price {

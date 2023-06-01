@@ -18,7 +18,7 @@ export default {
 
 </script>
 <template>
-    <div id="jumbotron">
+    <div id="jumbotron" class="pb-2">
         <div class="p-5 position-relative">
             <img v-if="games[0]" class="bg-img" :src="games[0].thumbnail" alt="">
             <!-- Nav Bar -->
@@ -78,7 +78,7 @@ export default {
                         <div class="cont-genere d-flex">
                             <!-- aggiungere foreach here -->
 
-                            <div class="genre-tag p-1 rounded mt-2" v-for="genre in games[0].genres">
+                            <div class="genre-tag p-1 rounded mt-2 me-2" v-for="genre in games[0].genres">
                                 <span class="text-white">{{ genre.name }}</span>
                             </div>
                         </div>

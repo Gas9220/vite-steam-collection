@@ -18,7 +18,7 @@ export default {
 }
 </script>
 <template>
-    <div id="offers">
+    <div id="offers" class="pb-3">
         <h3 class="container">OFFERTE SPECIALI</h3>
         <div class="container pb-5 justify-content-center d-flex">
             <div class="row">
@@ -26,7 +26,7 @@ export default {
                     <img :src="game.thumbnail" :alt="game.title" class="image">
                     <div>
                         <span class="price p-2">{{ game.price === 0 ? 'Free to play' : game.price + '€'}}</span>
-                        <span class="discount p-2">-{{ game.discount }}%</span>
+                        <span v-if="game.price != 0" class="discount p-2">-{{ game.discount }}%</span>
                     </div>
                 </div>
             </div>
